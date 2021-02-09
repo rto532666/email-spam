@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1> email predict</h1>
+	<form method="POST" action="{{url_for('predict')}}">
+
+		<input type="text" name="message" pattern=".{10,}" required>
+		<br/>
+
+		<input type="Submit" class="btn-info" value="Predict">
+	</form>
+
+	{% if prediction == 1 %}
+	<h2>email is spam</h2>
+	{% elif prediction == 0 %}
+	<h2>Not Spam (ham)</h2>
+	{% endif %}
+</body>
+</html>
